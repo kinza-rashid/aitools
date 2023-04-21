@@ -2,11 +2,11 @@ import streamlit as st
 from PIL import Image
 
 st.set_page_config(
-    page_title=" GRADIENT TECHNOLOGIES",
+    page_title=" SOLVER.AI",
     page_icon="☸️",
     layout="wide",
 )
-st.write('<style>body { margin: 0; font-family: Arial, Helvetica, sans-serif;} .header{padding: 10px 16px; background: #555; color: #f1f1f1; position:fixed;top:0;} .sticky { position: fixed; top: 0; width: 100%;} </style><div class="header" id="myHeader">'+str(25)+'</div>', unsafe_allow_html=True)
+
 hide_menu_style = """
         <style>
         #MainMenu {visibility: hidden; }
@@ -16,7 +16,7 @@ hide_menu_style = """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 c1, c2 = st.columns((7, 1))
 with c1:
-    st.title("🔮 :violet[G]RADIENT :violet[T]ECHNOLOGIES")
+    st.title("🔮 SOLVER :violet[AI]")
 with c2:
     st.text("")
     st.text("")
