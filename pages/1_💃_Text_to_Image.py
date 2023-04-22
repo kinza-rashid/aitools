@@ -1,12 +1,13 @@
 
 import requests
 import streamlit as st
-
+import os
 st.set_page_config(
-    page_title=" SOLVERAI",
+    page_title=" SOLVERA",
     page_icon="☸️",
     layout="wide",
 )
+
 hide_menu_style = """
         <style>
         #MainMenu {visibility: hidden; }
@@ -17,7 +18,7 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 c1, c2 = st.columns((7, 1))
 with c1:
-    st.title("🔮 SOLVER :violet[AI]")
+    st.title("🔮 :violet[SOLV]ERA")
 with c2:
     st.text("")
     st.text("")
@@ -59,11 +60,11 @@ else:
 
         if button and prompt != "":
             with st.spinner(text="In progress..."):
+                IMG_API = st.secrets["IMAGE_API"]
                 API_URL = "https://api-inference.huggingface.co/models/CompVis/stable-diffusion-v1-4"
                 headers = {
-                    "Authorization": "Bearer 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"}
+                    "Authorization": IMG_API}
 
-                # @st.cache_data
                 def text2image(payload):
                     response = requests.post(
                         API_URL, headers=headers, json=payload)

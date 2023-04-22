@@ -5,7 +5,7 @@ from sentence_transformers import SentenceTransformer  # ok with py 3.9.13
 import pinecone  # pip3 install datasets
 
 st.set_page_config(
-    page_title="SOLVERAI",
+    page_title="SOLVERA",
     page_icon="☸️",
     layout="wide",
 )
@@ -18,7 +18,7 @@ hide_menu_style = """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 c1, c2 = st.columns((7, 1))
 with c1:
-    st.title("🔮 SOLVER :violet[AI]")
+    st.title("🔮 :violet[SOLV]ERA")
 with c2:
     st.text("")
     st.text("")
@@ -58,11 +58,12 @@ else:
         if button and (prompt != ""):
             with st.spinner(text="Generating essay ..."):
                 # if button:
+                ESSY_API = st.secrets["ESSAY_API"]
                 retriever = SentenceTransformer(
                     'sentence-transformers/multi-qa-MiniLM-L6-cos-v1')
 
                 pinecone.init(
-                    api_key='97079bd8-7f8d-481f-acc5-1d616aea75fc', environment='us-central1-gcp')
+                    api_key=ESSY_API, environment='us-central1-gcp')
 
                 index = pinecone.Index('squad')
 

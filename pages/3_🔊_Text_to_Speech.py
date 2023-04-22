@@ -3,7 +3,7 @@ import streamlit as st
 import requests
 
 st.set_page_config(
-    page_title=" SOLVERAI",
+    page_title=" SOLVERA",
     page_icon="☸️",
     layout="wide",
 )
@@ -11,13 +11,13 @@ hide_menu_style = """
         <style>
         #MainMenu {visibility: hidden; }
         footer {visibility: hidden;}
-        </style>
-    """
+        </style>s
+        """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 c1, c2 = st.columns((7, 1))
 with c1:
-    st.title("🔮 SOLVER :violet[AI]")
+    st.title("🔮 :violet[SOLV]ERA")
 with c2:
     st.text("")
     st.text("")

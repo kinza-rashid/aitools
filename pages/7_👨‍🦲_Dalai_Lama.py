@@ -1,6 +1,7 @@
 
-import streamlit as st
+from urllib import response
 import requests
+import streamlit as st
 
 st.set_page_config(
     page_title=" SOLVERA",
@@ -46,30 +47,31 @@ if cbtn and (a != 4):
     local_css("style/style.css")
     # st.form("contact us", clear_on_submit=True)
 else:
-    st.header(' :green[🌷 Poetry ]')
+    st.header(' :green[👨‍🦲 Dalai Lama  ]')
     st.divider()
-    mytext = ""
-    txt_input = st.text_input("Enter text prompt here 👇🏻")
-    button = st.button("Generate Poem")
-    st.divider()
-    st.text("")
-    if button:
-        if txt_input == "":
-            st.text("Enter text prompt.")
-    if button and (txt_input != ""):
-        with st.spinner(text="Generating poem ..."):
-            # if button:
-            response = requests.post("https://voidkandy-ww1-poet-bot.hf.space/run/predict", json={
-                "data": [
-                    txt_input,
-                    False,
-                    0.1,
-                    65,
-                ]}).json()
-            mytext = response["data"][0]
+    prompt = st.text_input("What question do you want to ask to Dalai Lama ? ")
 
-        c1, c2 = st.columns((1, 1))
-        with c1:
-            st.write(txt_input, mytext)
-        with c2:
-            st.text("")
+    button = st.button("Write")
+
+    st.divider()
+    if button:
+        if prompt == "":
+            st.text("Enter suitable text prompt.")
+
+        if button and prompt != "":
+            DALAILAMA_API = st.secrets["DALAI_API"]
+            with st.spinner(text="Dalai lama is thinking ..."):
+
+                API_URL = "https://api-inference.huggingface.co/models/huggingtweets/dalailama"
+                headers = {
+                    "Authorization": DALAILAMA_API}
+
+                def query(payload):
+                    response = requests.post(
+                        API_URL, headers=headers, json=payload)
+                    return response.json()
+
+                output = query({
+                    "inputs": prompt,
+                })
+            st.write("", output[0]["generated_text"])
