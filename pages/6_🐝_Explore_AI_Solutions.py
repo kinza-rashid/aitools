@@ -1,6 +1,6 @@
 import streamlit as st
 import webbrowser
-
+from bokeh.models.widgets import Div
 st.set_page_config(
     page_title=" SOLVERA",
     page_icon="☸️",
@@ -55,9 +55,13 @@ else:
         col1.markdown(
             'GPT-4 is the most advanced large language model from Open AI. GPT-4 can solve difficult problems with greater accuracy, thanks to its broader general knowledge and problem solving abilities')
 
-        if col1.button("Explore GPT-4",'https://openai.com/product/gpt-4'):
-            url = 'https://openai.com/product/gpt-4'
-            st.markdown(url, unsafe_allow_html=True)
+        if col1.button("Explore GPT-4"):
+            js = "window.open('https://openai.com/product/gpt-4)"  # New tab or window
+            js = "window.location.href = 'https://openai.com/product/gpt-4"  # Current tab
+            html = '<img src onerror="{}">'.format(js)
+            div = Div(text=html)
+            st.bokeh_chart(div)
+            
 
         col2.image("images/gpt.jpeg")
 
