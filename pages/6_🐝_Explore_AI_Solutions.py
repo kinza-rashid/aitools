@@ -56,7 +56,7 @@ else:
 
         if col1.button("Explore GPT-4"):
             url = 'https://openai.com/product/gpt-4'
-            st.markdown(url, unsafe_allow_html=True)
+            col1.markdown(url, unsafe_allow_html=True)
             
 
         col2.image("images/gpt.jpeg")
