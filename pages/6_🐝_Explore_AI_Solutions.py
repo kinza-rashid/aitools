@@ -1,5 +1,6 @@
 import streamlit as st
 import webbrowser
+from bokeh.models.widgets import Div
 st.set_page_config(
     page_title=" SOLVERA",
     page_icon="☸️",
