@@ -60,6 +60,7 @@ else:
 
         if button and prompt != "":
             DALAILAMA_API = st.secrets["DALAI_API"]
+            st.write("In process")
             with st.spinner(text="Dalai lama is thinking ..."):
 
                 API_URL = "https://api-inference.huggingface.co/models/huggingtweets/dalailama"
