@@ -59,8 +59,9 @@ else:
             st.text("Enter suitable text prompt.")
 
         if button and prompt != "":
-            DALAILAMA_API = st.secrets["DALAI_API"]
+            
             with st.spinner(text="Dalai lama is thinking ..."):
+                DALAILAMA_API = st.secrets["DALAI_API"]
 
                 API_URL = "https://api-inference.huggingface.co/models/huggingtweets/dalailama"
                 headers = {
