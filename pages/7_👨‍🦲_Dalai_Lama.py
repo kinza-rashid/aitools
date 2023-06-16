@@ -49,7 +49,7 @@ if cbtn and (a != 4):
 else:
     st.header(' :green[👨‍🦲 Dalai Lama  ]')
     st.divider()
-    prompt = st.text_input("What question do you want to ask to Dalai Lama ? ")
+    prompt = st.text_input("Dalai Lama would complete your thought. ... e.g Prompt : Help the needy. Reply: Help the needy with money, advice, hope and compassion. ")
 
     button = st.button("Write")
 
