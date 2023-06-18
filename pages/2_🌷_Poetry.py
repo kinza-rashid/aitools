@@ -75,5 +75,6 @@ else:
                 st.text("Please enter suitable prompt !")
             if mytext["error"] != None:
                 st.write(txt_input, mytext["data"][0])
+            st.write(txt_input, mytext["data"][0])
         with c2:
             st.text("")
