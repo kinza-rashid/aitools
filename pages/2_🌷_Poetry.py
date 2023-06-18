@@ -70,6 +70,9 @@ else:
 
         c1, c2 = st.columns((1, 1))
         with c1:
-            st.write(txt_input, mytext)
+            if response["error"] == NULL:
+                st.write("Please enter new prompt")
+            if response["error"] != NULL:
+                st.write(txt_input, mytext)
         with c2:
             st.text("")
