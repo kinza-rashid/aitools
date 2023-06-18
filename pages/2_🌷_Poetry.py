@@ -66,13 +66,11 @@ else:
                     0.1,
                     65,
                 ]}).json()
-            mytext = response
+            mytext = response["data"]
+            
 
         c1, c2 = st.columns((1, 1))
         with c1:
-            if response["data"][0] == NULL:
-                st.write("Please enter new prompt")
-            if response["data"][0] != NULL:
-                st.write(txt_input, mytext)
+            st.write(txt_input, mytext)
         with c2:
             st.text("")
