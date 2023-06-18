@@ -72,7 +72,7 @@ else:
         c1, c2 = st.columns((1, 1))
         with c1:
             if mytext["error"] == None:
-                st.text("Please change your prompt")
+                st.text("Please enter suitable prompt !")
             if mytext["error"] != None:
                 st.write(txt_input, mytext["data"][0])
         with c2:
