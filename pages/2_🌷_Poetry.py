@@ -59,13 +59,8 @@ else:
     if button and (txt_input != ""):
         with st.spinner(text="Generating poem ..."):
             # if button:
-            response = requests.post("https://voidkandy-ww1-poet-bot.hf.space/run/predict", json={
-                "data": [
-                    txt_input,
-                    False,
-                    0.1,
-                    65,
-                ]}).json()
+            
+            response = requests.post("https://api-inference.huggingface.co/models/matthh/gpt2-poetry-model", headers=POET_API, json=txt_input).json()
             mytext = response
             
 
