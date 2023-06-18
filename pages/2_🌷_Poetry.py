@@ -66,7 +66,7 @@ else:
                     0.1,
                     65,
                 ]}).json()
-            mytext = response
+            mytext = response["data"]
             
 
         c1, c2 = st.columns((1, 1))
