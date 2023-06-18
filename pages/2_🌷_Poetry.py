@@ -71,6 +71,6 @@ else:
 
         c1, c2 = st.columns((1, 1))
         with c1:
-            st.write(txt_input, mytext)
+            st.write(txt_input, mytext["error"])
         with c2:
             st.text("")
