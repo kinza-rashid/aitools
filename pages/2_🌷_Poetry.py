@@ -72,4 +72,4 @@ else:
                 return response.json()
 
             output = query({"inputs": prompt})
-        st.write("", output[0])
+        st.write("", output[0]["generated_text"])
