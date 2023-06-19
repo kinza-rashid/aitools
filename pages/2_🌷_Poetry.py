@@ -73,6 +73,6 @@ else:
 
             output = query({"inputs": prompt})
             
-        st.write("", output)    
+        
         st.write("", output[0]["generated_text"])
        
