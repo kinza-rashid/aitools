@@ -60,10 +60,10 @@ else:
         with st.spinner(text="Generating poem ..."):
             # if button:
             
-            POET_API = st.secrets["DALAI_API"]
+            POETRY_API = st.secrets["POET_API"]
 
             API_URL = "https://api-inference.huggingface.co/models/matthh/gpt2-poetry-model"
-            headers = {"Authorization”: POET_API}
+            headers = {"Authorization”: POETRY_API}
 
             def query(payload):
                 response = requests.post(
