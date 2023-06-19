@@ -63,7 +63,8 @@ else:
             POETRY_API = st.secrets["POET_API"]
 
             API_URL = "https://api-inference.huggingface.co/models/matthh/gpt2-poetry-model"
-            headers = {"Authorization”: POETRY_API}
+            headers = {
+                    "Authorization": POETRY_API}
 
             def query(payload):
                 response = requests.post(
@@ -71,4 +72,4 @@ else:
                 return response.json()
 
             output = query({"inputs": prompt})
-            st.write("", output[0]["generated_text"])
+        st.write("", output[0]["generated_text"])
