@@ -72,7 +72,7 @@ else:
                 return response.json()
 
             output = query({"inputs": prompt})
-            if output[0]["error"] == None:
-                write("Please enter another prompt")
-            if output[0]["error"] != None:
-                st.write("", output[0]["generated_text"])
+            
+        st.write("", output)    
+        st.write("", output[0]["generated_text"])
+       
