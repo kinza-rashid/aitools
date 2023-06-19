@@ -62,16 +62,13 @@ else:
             
             POET_API = st.secrets["DALAI_API"]
 
-                API_URL = "https://api-inference.huggingface.co/models/matthh/gpt2-poetry-model"
-                headers = {
-                    "Authorization”: POET_API}
+            API_URL = "https://api-inference.huggingface.co/models/matthh/gpt2-poetry-model"
+            headers = {"Authorization”: POET_API}
 
-                def query(payload):
-                    response = requests.post(
-                        API_URL, headers=headers, json=payload)
-                    return response.json()
+            def query(payload):
+                response = requests.post(
+                API_URL, headers=headers, json=payload)
+                return response.json()
 
-                output = query({
-                    "inputs": prompt,
-                })
+            output = query({"inputs": prompt})
             st.write("", output[0]["generated_text"])
