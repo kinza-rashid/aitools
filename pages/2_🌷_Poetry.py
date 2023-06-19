@@ -49,33 +49,29 @@ else:
     st.header(' :green[🌷 Poetry ]')
     st.divider()
     mytext = ""
-    txt_input = st.text_input("Enter text prompt here 👇🏻")
+    prompt = st.text_input("Enter text prompt here 👇🏻")
     button = st.button("Generate Poem")
     st.divider()
     st.text("")
     if button:
-        if txt_input == "":
+        if prompt == "":
             st.text("Enter text prompt.")
-    if button and (txt_input != ""):
+    if button and (prompt != ""):
         with st.spinner(text="Generating poem ..."):
             # if button:
             
-            response = requests.post("https://voidkandy-ww1-poet-bot.hf.space/run/predict", json={
-                "data": [
-                    txt_input,
-                    False,
-                    0.1,
-                    65,
-                ]}).json()
-            mytext = response
-            
+            POET_API = st.secrets["DALAI_API"]
 
-        c1, c2 = st.columns((1, 1))
-        with c1:
-            if mytext["error"] == None:
-                st.text("Please enter suitable prompt !")
-            if mytext["error"] != None:
-                st.write(txt_input, mytext["data"][0])
-            st.write(txt_input, mytext)
-        with c2:
-            st.text("")
+                API_URL = "https://api-inference.huggingface.co/models/matthh/gpt2-poetry-model"
+                headers = {
+                    "Authorization”: POET_API}
+
+                def query(payload):
+                    response = requests.post(
+                        API_URL, headers=headers, json=payload)
+                    return response.json()
+
+                output = query({
+                    "inputs": prompt,
+                })
+            st.write("", output[0]["generated_text"])
