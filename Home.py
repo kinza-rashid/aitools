@@ -63,5 +63,5 @@ else:
     st.image("images/essay.jpg")
     st.subheader(":violet[Remove Background]")
     st.image("images/removebackground.jpg")
-    st.subheader(":violet[Future Works]")
+    st.subheader(":violet[Upcoming ... ]")
     st.markdown("This website is a work in progress and it shall be updated continously in future. Other free AI technologies shall be integrated and shared with users.")
